@@ -30,7 +30,8 @@ require("lazy").setup({
 	{ "folke/tokyonight.nvim"},
 	{'nvim-treesitter/nvim-treesitter'},
 	{ "ThePrimeagen/harpoon", branch = "harpoon2", dependencies = { "nvim-lua/plenary.nvim" },
-}
+	{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'}, {'neovim/nvim-lspconfig'}, {'hrsh7th/cmp-nvim-lsp'}, {'hrsh7th/nvim-cmp'}, {'L3MON4D3/LuaSnip'}},
+
 })
 
 
@@ -86,4 +87,8 @@ vim.keymap.set("n", "<C-w>", function() harpoon:list():select(2) end)
 vim.keymap.set("n", "<C-e>", function() harpoon:list():select(3) end)
 vim.keymap.set("n", "<C-r>", function() harpoon:list():select(4) end)
 
+-- LSP ZERO CONFIG
+require('lsp-zero')
 
+vim.wo.relativenumber = true
+vim.wo.number = true
